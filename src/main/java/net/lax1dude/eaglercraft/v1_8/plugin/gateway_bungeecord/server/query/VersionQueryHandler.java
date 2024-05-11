@@ -38,10 +38,10 @@ public class VersionQueryHandler extends EaglerQuerySimpleHandler {
 		handshakeVersions.add(3);
 		responseObj.add("handshakeVersions", handshakeVersions);
 		JsonArray protocolVersions = new JsonArray();
-		protocolVersions.add(47);
+		protocolVersions.add(110);
 		responseObj.add("protocolVersions", protocolVersions);
 		JsonArray gameVersions = new JsonArray();
-		gameVersions.add("1.8");
+		gameVersions.add("1.9.4");
 		responseObj.add("gameVersions", gameVersions);
 		JsonObject proxyInfo = new JsonObject();
 		proxyInfo.addProperty("brand", ProxyServer.getInstance().getName());

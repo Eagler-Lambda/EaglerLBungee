@@ -24,44 +24,45 @@ public enum EaglerBungeeProtocol {
 	HANDSHAKE {
 
 		{
-			TO_SERVER.registerPacket(Handshake.class, Handshake::new, map(ProtocolConstants.MINECRAFT_1_8, 0x00));
+			TO_SERVER.registerPacket(Handshake.class, Handshake::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x00));
 		}
 	},
 	// 0
 	GAME {
 
 		{
-			TO_CLIENT.registerPacket(KeepAlive.class, KeepAlive::new, map(ProtocolConstants.MINECRAFT_1_8, 0x00));
-			TO_CLIENT.registerPacket(Login.class, Login::new, map(ProtocolConstants.MINECRAFT_1_8, 0x01));
-			TO_CLIENT.registerPacket(Chat.class, Chat::new, map(ProtocolConstants.MINECRAFT_1_8, 0x02));
-			TO_CLIENT.registerPacket(Respawn.class, Respawn::new, map(ProtocolConstants.MINECRAFT_1_8, 0x07));
+			TO_CLIENT.registerPacket(KeepAlive.class, KeepAlive::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x1F));
+			TO_CLIENT.registerPacket(Login.class, Login::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x23));
+			TO_CLIENT.registerPacket(Chat.class, Chat::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x0F));
+			TO_CLIENT.registerPacket(Respawn.class, Respawn::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x33));
 			TO_CLIENT.registerPacket(PlayerListItem.class, // PlayerInfo
-					PlayerListItem::new, map(ProtocolConstants.MINECRAFT_1_8, 0x38));
+					PlayerListItem::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x2D));
 			TO_CLIENT.registerPacket(TabCompleteResponse.class, TabCompleteResponse::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x3A));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x0E));
 			TO_CLIENT.registerPacket(ScoreboardObjective.class, ScoreboardObjective::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x3B));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x3F));
 			TO_CLIENT.registerPacket(ScoreboardScore.class, ScoreboardScore::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x3C));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x42));
 			TO_CLIENT.registerPacket(ScoreboardDisplay.class, ScoreboardDisplay::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x3D));
-			TO_CLIENT.registerPacket(Team.class, Team::new, map(ProtocolConstants.MINECRAFT_1_8, 0x3E));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x38));
+			TO_CLIENT.registerPacket(Team.class, Team::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x41));
 			TO_CLIENT.registerPacket(PluginMessage.class, PluginMessage::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x3F));
-			TO_CLIENT.registerPacket(Kick.class, Kick::new, map(ProtocolConstants.MINECRAFT_1_8, 0x40));
-			TO_CLIENT.registerPacket(Title.class, Title::new, map(ProtocolConstants.MINECRAFT_1_8, 0x45));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x18));
+			TO_CLIENT.registerPacket(Kick.class, Kick::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x1A));
+			TO_CLIENT.registerPacket(Title.class, Title::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x45));
 			TO_CLIENT.registerPacket(PlayerListHeaderFooter.class, PlayerListHeaderFooter::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x47));
-			TO_CLIENT.registerPacket(EntityStatus.class, EntityStatus::new, map(ProtocolConstants.MINECRAFT_1_8, 0x1A));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x47));
+			TO_CLIENT.registerPacket(EntityStatus.class, EntityStatus::new,
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x1B));
 
-			TO_SERVER.registerPacket(KeepAlive.class, KeepAlive::new, map(ProtocolConstants.MINECRAFT_1_8, 0x00));
-			TO_SERVER.registerPacket(Chat.class, Chat::new, map(ProtocolConstants.MINECRAFT_1_8, 0x01));
+			TO_SERVER.registerPacket(KeepAlive.class, KeepAlive::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x0B));
+			TO_SERVER.registerPacket(Chat.class, Chat::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x02));
 			TO_SERVER.registerPacket(TabCompleteRequest.class, TabCompleteRequest::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x14));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x01));
 			TO_SERVER.registerPacket(ClientSettings.class, ClientSettings::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x15));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x04));
 			TO_SERVER.registerPacket(PluginMessage.class, PluginMessage::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x17));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x09));
 		}
 	},
 	// 1
@@ -69,28 +70,30 @@ public enum EaglerBungeeProtocol {
 
 		{
 			TO_CLIENT.registerPacket(StatusResponse.class, StatusResponse::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x00));
-			TO_CLIENT.registerPacket(PingPacket.class, PingPacket::new, map(ProtocolConstants.MINECRAFT_1_8, 0x01));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x00));
+			TO_CLIENT.registerPacket(PingPacket.class, PingPacket::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x01));
 
 			TO_SERVER.registerPacket(StatusRequest.class, StatusRequest::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x00));
-			TO_SERVER.registerPacket(PingPacket.class, PingPacket::new, map(ProtocolConstants.MINECRAFT_1_8, 0x01));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x00));
+			TO_SERVER.registerPacket(PingPacket.class, PingPacket::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x01));
 		}
 	},
 	// 2
 	LOGIN {
 
 		{
-			TO_CLIENT.registerPacket(Kick.class, Kick::new, map(ProtocolConstants.MINECRAFT_1_8, 0x00));
+			TO_CLIENT.registerPacket(Kick.class, Kick::new, map(ProtocolConstants.MINECRAFT_1_9_4, 0x00));
 			TO_CLIENT.registerPacket(EncryptionRequest.class, EncryptionRequest::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x01));
-			TO_CLIENT.registerPacket(LoginSuccess.class, LoginSuccess::new, map(ProtocolConstants.MINECRAFT_1_8, 0x02));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x01));
+			TO_CLIENT.registerPacket(LoginSuccess.class, LoginSuccess::new,
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x02));
 			TO_CLIENT.registerPacket(SetCompression.class, SetCompression::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x03));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x03));
 
-			TO_SERVER.registerPacket(LoginRequest.class, LoginRequest::new, map(ProtocolConstants.MINECRAFT_1_8, 0x00));
+			TO_SERVER.registerPacket(LoginRequest.class, LoginRequest::new,
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x00));
 			TO_SERVER.registerPacket(EncryptionResponse.class, EncryptionResponse::new,
-					map(ProtocolConstants.MINECRAFT_1_8, 0x01));
+					map(ProtocolConstants.MINECRAFT_1_9_4, 0x01));
 		}
 	},
 	// 3
